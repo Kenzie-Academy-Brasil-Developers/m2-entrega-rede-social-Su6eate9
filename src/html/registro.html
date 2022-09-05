@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../styles/registro.css">
-    <script defer type="module" src="../js/index.js"></script>
+    <script defer type="module" src="../js/models/registro.js"></script>
 </head>
 <body>
     <header>
@@ -29,7 +29,7 @@
             <input type="password" name="password" id="password__registro" placeholder="Sua senha">
             <input type="text" name="trabalho" id="job__registro" placeholder="Qual o seu trabalho?">
             <input type="url" name="iamge" id="imagem__registro" placeholder="URL da imagem de perfil">
-            <button onclick="event.preventDefault()" type="submit" >Registrar</button>
+            <button type="submit" id="btnRegister">Registrar</button>
             <span>Já possui cadastro?</span>
             <a href="../../index.html">Ir para página de login</a>
         </form>
