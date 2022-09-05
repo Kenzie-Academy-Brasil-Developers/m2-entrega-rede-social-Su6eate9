@@ -11,7 +11,6 @@ class Login {
                 "password": password.value
             }
             Requests.login(data)
-            console.log(data)
         })
     }
 }
