@@ -1,0 +1,23 @@
+/* Modal registro */
+.main__titulo{
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.voltarCadastro{
+    width: 70px;
+    height: 30px;
+    font-weight: 600;
+    font-size: .9rem;
+    border: 2px solid var(--white);border-radius: 5px;
+    color: var(--black);
+    padding: 4px 5px;
+}
+.main__titulo > a:hover{
+    border: 2px solid var(--grey-1);
+    background: none;
+    /* color: var(--white); */
+}
+/* Fim atualização modal registro */

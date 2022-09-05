@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rede Social</title>
+    <title>Login Rede Social</title>
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/index.css">
+    <script defer type="module" src="./src/js/index.js"></script>
 </head>
 <body>
-    
+    <header>
+         <h1>TechPosters</h1>
+         <section class="buttons">
+            <a href="#" class="btnAll login">Login</a>
+            <a href="./src/html/registro.html" class="btnAll registro">Registro</a>
+         </section>
+    </header>
+    <main>
+        <div>
+            <h2>Login</h2>
+            <h3>Login</h3> <!-- Ajuste -->
+        </div>
+        <form class="form__login" action="#" method="post">
+            <input type="email" name="email" id="email__user" placeholder="Seu e-mail">
+            <input type="password" name="password" id="password__user" placeholder="Sua senha">
+            <button onclick="event.preventDefault()" type="submit">Logar</button>
+            <span>Ainda não possui cadastro?</span>
+            <a href="./src/html/registro.html">Ir para página de registro</a>
+        </form>
 </body>
 </html>
