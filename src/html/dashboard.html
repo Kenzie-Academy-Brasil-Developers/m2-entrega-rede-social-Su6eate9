@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPosters</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <script defer type="module" src="../js/models/dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <h1>TechPosters</h1>
+        <button>Sair</button>
+    </header>
+    <main>
+        <section>
+            <img src="../assets/samuelLeao.png" alt="photo Samuel Leão">
+            <div>
+                <h2>Samuel Leão</h2>
+                <p>Frontend Engineer</p>
+            </div>
+            <span>565 seguidores</span>
+        </section>
+        <section>
+            <input type="text" name="title" id="title__post" placeholder="Digitar título do post">
+            <textarea name="text" id="content__post" cols="30" rows="10">Digitar descrição do post</textarea>
+            <button onclick="preventDefault()" type="submit"></button>
+        </section>
+        <section>
+            <h2>Sugestões para você seguir</h2>
+            <article>
+                <div>
+                    <img src="../assets/carlosLima.png" alt="photo Carlos Lima">
+                    <div>
+                        <h3>Carlos Lima</h3>
+                        <span>UX e UI Desginer</span>
+                    </div>
+                </div>
+                <button onclick="preventDefault()" type="submit">Seguir</button>
+            </article>
+            <article>
+                <div>
+                    <img src="../assets/carlaMaria.png" alt="photo Carla Maria">
+                    <div>
+                        <h3>Carla Maria</h3>
+                        <span>Backend Engineer</span>
+                    </div>
+                </div>
+                <button onclick="preventDefault()" type="submit">Seguir</button>
+            </article>
+        </section>
+        <section>
+            <h2>Posts</h2>
+            <article>
+                <img src="../assets/samuelPersuhn.png" alt="photo Samuel Persuhn">
+                <div>
+                    <h2>Samuel Leão</h2>
+                    <p>Frontend Engineer</p>
+                </div>
+            </article>
+            <article>
+                <h2>Como criar um interface simples e agradável utilizando boas práticas de design</h2>
+                <p>Hoje vamos conversar sobre como criar uma interface agradável mesmo sem ter um design pronto feito por um profissional de UI design.</p>
+                <div>
+                    <button>Abrir Post</button>
+                    <button>Heart</button>
+                </div>
+            </article>
+            <article>
+                <img src="../assets/samuelPersuhn.png" alt="photo Samuel Persuhn">
+                <div>
+                    <h2>Samuel Leão</h2>
+                    <p>Frontend Engineer</p>
+                </div>
+            </article>
+            <article>
+                <h2>Como criar um interface simples e agradável utilizando boas práticas de design</h2>
+                <p>Hoje vamos conversar sobre como criar uma interface agradável mesmo sem ter um design pronto feito por um profissional de UI design.</p>
+                <div>
+                    <button>Abrir Post</button>
+                    <button>Heart</button>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
