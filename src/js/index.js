@@ -1,10 +1,18 @@
-async function modalRegistro(){
-    const btnModalRegistro = document.querySelectorAll("[data-modal-control]")
-    for(let i=0; i<btnModalRegistro; i++){
-        btnModalRegistro[i].addEventListener("click", e => {
-            let valueDataModalControl = btnModalRegistro[i].getAttribute("data-modal-control")
-            document.getElementById(valueDataModalControl).classList.toggle("modal__show")
+import { Requests } from "./models/api.js";
+class Login {
+    static loginPage(){
+        const email    = document.querySelector("#email__user")
+        const password = document.querySelector("#password__user")
+        const btnLogin = document.querySelector("#login__btn")
+        btnLogin.addEventListener("click", e => {
+            e.preventDefault()
+            const data = {
+                "email": email.value,
+                "password": password.value
+            }
+            Requests.login(data)
+            console.log(data)
         })
     }
 }
-modalRegistro()
+Login.loginPage()
