@@ -281,6 +281,7 @@ aside > h2{
     display: flex;
     align-items: center;
     gap: 30px;
+    margin-bottom: 30px;
 }
 #btn__openPost{
     padding: 0px 12px;
