@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPosters</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/dashboardMobile.css">
+    <link rel="stylesheet" href="../styles/dashboardDesktop.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script defer type="module" src="../js/models/dashboard.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>TechPosters</h1>
+            <button type="submit" id="btn__exit">Sair</button>
+        </div>
+    </header>
+    <main>
+        <section class="section__user">
+            <!-- <img id="userPhoto" src="../assets/samuelLeao.png" alt="photo Samuel Leão">
+            <div>
+                <h2 id="username">Samuel Leão</h2>
+                <p id="userJob">Frontend Engineer</p>
+            </div>
+            <span id="userFollows">565 seguidores</span> -->
+        </section>
+        <section class="section__create">
+            <!-- <input type="text" name="title" id="title__post" placeholder="Digitar título do post">
+            <textarea name="text" id="content__post" cols="30" rows="10">Digitar descrição do post</textarea>
+            <div>
+                <button id="none">Postar</button>
+                <button onclick="preventDefault()" type="submit" id="btn__createPost">Postar</button>
+            </div> -->
+        </section>
+        <aside class="aside__follow">
+            <h2>Sugestões para você seguir</h2>
+            <ul class="slider">
+                <!-- <li>
+                    <article class="slider__article">
+                        <img src="../assets/carlosLima.png" alt="photo Carlos Lima">
+                        <div>
+                            <h3>Carlos Lima</h3>
+                            <span>UX e UI Desginer</span>
+                        </div>
+                    </article>
+                    <button onclick="preventDefault()" type="submit" id="btn__follow">Seguir</button>
+                </li>
+                <li>
+                    <article class="slider__article">
+                        <img src="../assets/carlaMaria.png" alt="photo Carla Maria">
+                        <div>
+                            <h3>Carla Maria</h3>
+                            <span>Backend Engineer</span>
+                        </div>
+                    </article>
+                    <button onclick="preventDefault()" type="submit" id="btn__follow">Seguir</button>
+                </li>
+                <li>
+                    <article class="slider__article">
+                        <img src="../assets/carlaMaria.png" alt="photo Carla Maria">
+                        <div>
+                            <h3>Carla Maria</h3>
+                            <span>Backend Engineer</span>
+                        </div>
+                    </article>
+                    <button onclick="preventDefault()" type="submit" id="btn__follow">Seguir</button>
+                </li>
+                <li>
+                    <article class="slider__article">
+                        <img src="../assets/carlaMaria.png" alt="photo Carla Maria">
+                        <div>
+                            <h3>Carla Maria</h3>
+                            <span>Backend Engineer</span>
+                        </div>
+                    </article>
+                    <button onclick="preventDefault()" type="submit" id="btn__follow">Seguir</button>
+                </li>
+                <li>
+                    <article class="slider__article">
+                        <img src="../assets/carlaMaria.png" alt="photo Carla Maria">
+                        <div>
+                            <h3>Carla Maria</h3>
+                            <span>Backend Engineer</span>
+                        </div>
+                    </article>
+                    <button onclick="preventDefault()" type="submit" id="btn__follow">Seguir</button>
+                </li> -->
+            </ul>
+        </aside>
+        <section class="section__posts">
+            <h2>Posts</h2>
+            <ul class="section__posts__ul">
+                <li class="li__posts__info">
+                    <img src="../assets/samuelPersuhn.png" alt="photo Samuel Persuhn">
+                    <div>
+                        <h2>Samuel Leão</h2>
+                        <p>Frontend Engineer</p>
+                    </div>
+                </li>
+                <li class="li__posts__text">
+                    <h2>Como criar um interface simples e agradável utilizando boas práticas de design</h2>
+                    <p>Hoje vamos conversar sobre como criar uma interface agradável mesmo sem ter um design pronto feito por um profissional de UI design.</p>
+                    <div>
+                        <button id="btn__openPost">Abrir Post</button>
+                        <div class="count__like">
+                            <button class="btn__likePost" id="btn__likePost"></button>
+                            <span>0</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
