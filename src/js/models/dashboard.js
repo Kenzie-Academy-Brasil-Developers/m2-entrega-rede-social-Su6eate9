@@ -64,13 +64,39 @@ class Dashboard {
     }
     //Usuários apresentados
     static async otherUsers(){
-        const ulSlider = document.querySelector(".slider")
-        const articleSlider = document.createElement("article")
-        const imgOtherUser  = document.createElement("img")
-        const divSlider     = document.createElement("div")
-        const nameOtherUser = document.createElement("h3")
-        const jobOtherUser  = document.createElement("span")
-        const btnFollow     = document.createElement("button")
+        const otherUsers = await Requests.getAllUsers()
+        const listUsers  = []
+        function listenerUsers(obj){
+            const results = obj.results
+            for(let i=0; i<10; i++){
+                const random = results.sort()
+                listUsers.push(random)
+                const listenerFull = [...new Set(listUsers)]
+                listenerFull.forEach(user => {
+                    const ulSlider = document.querySelector(".slider")
+                    const articleSlider = document.createElement("article")
+                    const imgOtherUser  = document.createElement("img")
+                    const divSlider     = document.createElement("div")
+                    const nameOtherUser = document.createElement("h3")
+                    const jobOtherUser  = document.createElement("span")
+                    const btnFollow     = document.createElement("button")
+        
+                    articleSlider.classList.add("slider__article")
+                    imgOtherUser.src = user[i].image
+                    imgOtherUser.alt = user[i].username
+                    nameOtherUser.innerText = user[i].username
+                    jobOtherUser.innerText  = user[i].work_at
+                    btnFollow.type      = "submit"
+                    btnFollow.id        = "btn__follow"
+                    btnFollow.innerText = "Seguir" 
+        
+                    divSlider.append(nameOtherUser,jobOtherUser)
+                    articleSlider.append(imgOtherUser,divSlider)
+                    ulSlider.append(articleSlider,btnFollow)
+                })
+            }
+        }
+        listenerUsers(otherUsers)
     }
     //Visualização dos posts
     static async postView(){
@@ -92,3 +118,4 @@ class Dashboard {
 Logout.logoutPage()
 Dashboard.dashboardUser()
 Dashboard.postCreate()
+Dashboard.otherUsers()
