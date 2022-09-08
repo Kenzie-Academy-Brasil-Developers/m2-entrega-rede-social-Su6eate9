@@ -8,36 +8,38 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/dashboardMobile.css">
     <link rel="stylesheet" href="../styles/dashboardDesktop.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script defer type="module" src="../js/models/dashboard.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 <body>
     <header>
         <div>
             <h1>TechPosters</h1>
-            <button id="btn__exit">Sair</button>
+            <button type="submit" id="btn__exit">Sair</button>
         </div>
     </header>
     <main>
         <section class="section__user">
-            <img src="../assets/samuelLeao.png" alt="photo Samuel Leão">
+            <!-- <img id="userPhoto" src="../assets/samuelLeao.png" alt="photo Samuel Leão">
             <div>
-                <h2>Samuel Leão</h2>
-                <p>Frontend Engineer</p>
+                <h2 id="username">Samuel Leão</h2>
+                <p id="userJob">Frontend Engineer</p>
             </div>
-            <span>565 seguidores</span>
+            <span id="userFollows">565 seguidores</span> -->
         </section>
         <section class="section__create">
-            <input type="text" name="title" id="title__post" placeholder="Digitar título do post">
+            <!-- <input type="text" name="title" id="title__post" placeholder="Digitar título do post">
             <textarea name="text" id="content__post" cols="30" rows="10">Digitar descrição do post</textarea>
             <div>
                 <button id="none">Postar</button>
                 <button onclick="preventDefault()" type="submit" id="btn__createPost">Postar</button>
-            </div>
+            </div> -->
         </section>
         <aside class="aside__follow">
             <h2>Sugestões para você seguir</h2>
             <ul class="slider">
-                <li>
+                <!-- <li>
                     <article class="slider__article">
                         <img src="../assets/carlosLima.png" alt="photo Carlos Lima">
                         <div>
@@ -86,7 +88,7 @@
                         </div>
                     </article>
                     <button onclick="preventDefault()" type="submit" id="btn__follow">Seguir</button>
-                </li>
+                </li> -->
             </ul>
         </aside>
         <section class="section__posts">
@@ -105,7 +107,7 @@
                     <div>
                         <button id="btn__openPost">Abrir Post</button>
                         <div class="count__like">
-                            <button id="btn__likePost"></button>
+                            <button class="btn__likePost" id="btn__likePost"></button>
                             <span>0</span>
                         </div>
                     </div>

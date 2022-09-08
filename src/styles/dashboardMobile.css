@@ -163,7 +163,7 @@ aside > h2{
 .slider{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 40px;
     width: 83vw;
     max-width: 800px;
     overflow-x: auto;
@@ -228,6 +228,7 @@ aside > h2{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    width: 100%;
 }
 .section__posts > h2{
     font-weight: 700;
@@ -239,11 +240,15 @@ aside > h2{
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+    width: 100%;
 }
 .li__posts__info{
     display: flex;
     align-items: center;
     gap: 10px;
+}
+.li__posts__info > img{
+    max-width: 45px;
 }
 .li__posts__info > div{
     display: flex;
@@ -299,7 +304,7 @@ aside > h2{
     align-items: center;
     gap: 10px;
 }
-#btn__likePost{
+.btn__likePost{
     height: 15px;
     width: 15px;
     background-color: var(--grey-3);
@@ -307,7 +312,7 @@ aside > h2{
     transform: rotate(225deg);
     position: relative;
 }
-#btn__likePost:before, #btn__likePost:after {
+.btn__likePost:before, .btn__likePost:after {
   content: "";
   background-color: var(--grey-3);
   border-radius: 50%;
@@ -315,11 +320,10 @@ aside > h2{
   width: 15px;
   position: absolute;
 }
-#btn__likePost:before {
+.btn__likePost:before {
     top: 0px;
 }
-
-#btn__likePost:after {
+.btn__likePost:after {
     left: 0px;
 }
 /* Button like ativado */
