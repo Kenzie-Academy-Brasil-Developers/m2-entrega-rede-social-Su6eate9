@@ -68,12 +68,13 @@ class Dashboard {
         const listUsers  = []
         function listenerUsers(obj){
             const results = obj.results
-            for(let i=0; i<10; i++){
+            for(let i=0; i<3; i++){
                 const random = results.sort()
                 listUsers.push(random)
                 const listenerFull = [...new Set(listUsers)]
                 listenerFull.forEach(user => {
                     const ulSlider = document.querySelector(".slider")
+                    const liSlider = document.createElement("li")
                     const articleSlider = document.createElement("article")
                     const imgOtherUser  = document.createElement("img")
                     const divSlider     = document.createElement("div")
@@ -92,30 +93,83 @@ class Dashboard {
         
                     divSlider.append(nameOtherUser,jobOtherUser)
                     articleSlider.append(imgOtherUser,divSlider)
-                    ulSlider.append(articleSlider,btnFollow)
+                    liSlider.append(articleSlider,btnFollow)
+                    ulSlider.append(liSlider)
                 })
             }
         }
         listenerUsers(otherUsers)
+        // Dashboard.followOtherUsers()
     }
     //Visualização dos posts
     static async postView(){
-        const ulPosts  = document.querySelector(".section__posts__ul")
+        const postsList = await Requests.getPosts()
+        const array = postsList.results
+        array.forEach((e) => {
+            const ulPosts = document.querySelector(".section__posts__ul")
+            const liInfo  = document.createElement("li")  
+            const photo   = document.createElement("img")
+            const divInfo = document.createElement("div")  
+            const name    = document.createElement("h2")  
+            const job     = document.createElement("p")
+
+            liInfo.classList.add("li__posts__info")
+            photo.src = e.author.image
+            photo.alt = e.author.username
+            name.innerText = e.author.username
+            job.innerText  = e.author.work_at
+            
+            const liText  = document.createElement("li")  
+            const title   = document.createElement("h2")
+            const text    = document.createElement("p")  
+            const divText = document.createElement("div")  
+            const btnPost = document.createElement("button")
+            const divLike = document.createElement("div")
+            const btnLike = document.createElement("button")
+            const count   = document.createElement("spans")
+
+            liText.classList.add("li__posts__text")
+            title.innerText = e.title
+            text.innerText  = e.description
+            btnPost.id        = "btn__openPost"
+            btnPost.innerText = "Abrir Post"
+            divLike.classList.add("count__like")
+            btnLike.classList.add("btn__likePost")
+            btnLike.id      = "btn__likePost"
+            count.innerText = e.likes.length
+            
+            divInfo.append(name,job)
+            liInfo.append(photo,divInfo)
+            divLike.append(btnLike,count)
+            divText.append(btnPost,divLike)
+            liText.append(title,text,divText)
+            ulPosts.append(liInfo,liText)
+        })
+        Dashboard.likePost()
+    }
+    static async likePost(){
+        let active = false
+        const btnLike = document.querySelectorAll("#btn__likePost")
+        await btnLike.addEventListener("click", async (e) => {
+            e.preventDefault()
+            if(!active){
+                btnLike.classList.toggle(".btn__deslikePost")
+                active = true
+                const data = {
+                    "post_uuid": btnLike.id
+                }
+                await Requests.like(data)
+            } else {
+                btnLike.classList.toggle(".btn__likePost")
+                active = false
+                await Requests.unlike(btnLike.id)
+            }
+        })
     }
 }
-/* 
-<li>
-    <article class="slider__article">
-        <img src="../assets/carlosLima.png" alt="photo Carlos Lima">
-        <div>
-            <h3>Carlos Lima</h3>
-            <span>UX e UI Desginer</span>
-        </div>
-    </article>
-    <button onclick="preventDefault()" type="submit" id="btn__follow">Seguir</button>
-</li>
-*/
 Logout.logoutPage()
 Dashboard.dashboardUser()
 Dashboard.postCreate()
 Dashboard.otherUsers()
+Dashboard.postView()
+Dashboard.likePost()
