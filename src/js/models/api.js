@@ -1,6 +1,6 @@
 import { Toast } from "./toast.js"
 export class Requests {
-    static url = "http://m2-rede-social.herokuapp.com/api"
+    static url = "https://m2-rede-social.herokuapp.com/api"
     static token = localStorage.getItem("@redeSocial:token")
     static headers = {
         "Content-Type": "application/json"
