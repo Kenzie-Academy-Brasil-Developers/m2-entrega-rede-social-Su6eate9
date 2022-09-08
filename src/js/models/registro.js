@@ -17,7 +17,6 @@ class Register {
                 "image": photo.value  
            }
            Requests.register(data)
-           console.log(data)
         })
     }
 }
