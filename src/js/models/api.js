@@ -17,7 +17,6 @@ export class Requests {
         })
         .then(response => response.json())        
         .then(data  => {
-            console.log(data)
             if(data.uuid){
                 Toast.create("Usuário registrado com sucesso!","green")
                 setTimeout(() => {
