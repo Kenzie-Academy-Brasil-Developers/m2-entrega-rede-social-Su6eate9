@@ -17,16 +17,19 @@ export class Requests {
         })
         .then(response => response.json())        
         .then(data  => {
-            Toast.create("Usuário registrado com sucesso!","green")
-            setTimeout(() => {
-                window.location.replace("../../index.html")
-            }, 2000);
+            console.log(data)
+            if(data.uuid){
+                Toast.create("Usuário registrado com sucesso!","green")
+                setTimeout(() => {
+                    window.location.replace("../../index.html")
+                }, 2000);
+            }
+            else {
+                Toast.create("Dados inválidos","red")   
+            }
             return data
         })
-        .catch(err => {
-            Toast.create("Email já utilizado!","red")
-            console.log(err)
-        })
+        .catch(err => console.log(err))
     }
     static async login(data){
         return await fetch(`${Requests.url}/users/login/`,{
