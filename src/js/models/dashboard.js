@@ -42,7 +42,7 @@ class Dashboard {
         contentPost.id   = "content__post"
         contentPost.cols = "30"
         contentPost.rows = "10"
-        contentPost.innerText = "Digitar descrição do post"
+        contentPost.placeholder = "Digitar descrição do post"
         btnPostNone.id = "none"
         btnPostNone.innerText = "Postar"
         btnPost.type = "submit"
@@ -69,7 +69,7 @@ class Dashboard {
         function listenerUsers(obj){
             const results = obj.results
             for(let i=0; i<3; i++){
-                const random = results.sort()
+                const random = results
                 listUsers.push(random)
                 const listenerFull = [...new Set(listUsers)]
                 listenerFull.forEach(user => {
@@ -150,17 +150,17 @@ class Dashboard {
     static async likePost(){
         let active = false
         const btnLike = document.querySelectorAll("#btn__likePost")
-        await btnLike.addEventListener("click", async (e) => {
+        btnLike.addEventListener("click", async (e) => {
             e.preventDefault()
             if(!active){
-                btnLike.classList.toggle(".btn__deslikePost")
+                btnLike.classList.toggle("btn__deslikePost")
                 active = true
                 const data = {
                     "post_uuid": btnLike.id
                 }
                 await Requests.like(data)
             } else {
-                btnLike.classList.toggle(".btn__likePost")
+                btnLike.classList.toggle("btn__likePost")
                 active = false
                 await Requests.unlike(btnLike.id)
             }

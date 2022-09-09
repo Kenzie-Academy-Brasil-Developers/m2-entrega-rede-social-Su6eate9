@@ -25,6 +25,7 @@ header{
     background-color: var(--grey-1);
     color: var(--white);
     position: fixed;
+    z-index: 1000;
 }
 header > div{
     display: flex;
@@ -116,13 +117,15 @@ input::placeholder{
     border: 2px solid #DEE2E6;
     border-radius: 5px;
     background-color: var(--white);
-    font-family: 'Inter', sans-serif;
-    color: var(--grey-3);
+    font-family: 'Inter', sans-serif;   
     outline: 0;
     overflow-y:auto;
     resize: none;
     font-weight: 400;
     font-size: 1rem;
+}
+textarea::placeholder{
+    color: var(--grey-3);
 }
 .section__create > div{
     display: flex;
